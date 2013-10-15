@@ -1,0 +1,7 @@
+parameters:
+#    landing_pages_todosganan_gadgets.example.class: Landing\Pages\Todosganan\GadgetsBundle\Example
+
+services:
+#    landing_pages_todosganan_gadgets.example:
+#        class: %landing_pages_todosganan_gadgets.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,41 @@
+{% extends 'LandingPagesCoreBundle::' ~ portal ~ 'layout.html.twig' %}
+
+{% block content %}
+	<div class="background">
+		<div class="container">
+			<div class="header">					
+				<div class="legalesSuperior">{{ params.web.webspot.legals.web_top_legal.val }}</div>
+				<!-- <div class="exclusivo">{{ params.web.webspot.legals.webTop.val }}</div> -->
+			</div>
+			<img class="contador" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_11.gif') }}" />
+			<div class="principal">
+			<div class="chica3">
+				<div class="sexy"></div>
+			</div>
+			<div class="right">					
+				<div class="mujeres"></div>
+					<div class="form">
+					{% if params.web.webspot.formfields.error.val == NULL %}
+						<img class="bienvenido" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/general/web_06.png') }}"/>
+					{% else %}
+						{{ include('LandingPages' ~ params.config.portal.bundle ~ '' ~ params.config.site.bundle ~ 'Bundle::errors.html.twig') }}
+					{% endif %}
+					</div>
+					<div class="tablaChicas">
+						<table cellspacing="10">
+							<tr>
+								<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/general/web_16.png') }}"/></td>
+								<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/general/web_19.png') }}"/></td>
+								<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/general/web_18.png') }}"/></td>
+								<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/general/web_11.png') }}"/></td>
+							</tr>
+						</table>											
+					</div>
+				</div>				
+			</div>
+			<div class="legales">{{ params.web.webspot.legals.web_lower_legal.val }}</div>
+		</div>
+	</div>
+
+	<!-- '../../../configGeneral/generalCodeFooter.php' -->
+{% endblock %}

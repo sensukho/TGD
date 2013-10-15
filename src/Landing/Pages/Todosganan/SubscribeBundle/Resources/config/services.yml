@@ -1,0 +1,7 @@
+parameters:
+#    landing_pages_todosganan_subscribe.example.class: Landing\Pages\Todosganan\SubscribeBundle\Example
+
+services:
+#    landing_pages_todosganan_subscribe.example:
+#        class: %landing_pages_todosganan_subscribe.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

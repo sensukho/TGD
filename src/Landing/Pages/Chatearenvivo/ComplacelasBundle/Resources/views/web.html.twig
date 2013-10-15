@@ -1,0 +1,91 @@
+{% extends 'LandingPagesCoreBundle::' ~ portal ~ 'layout.html.twig' %}
+{% block title %}Chat Sexy{% endblock %}
+{% block content %}
+	<div class="background">
+		<div class="container">
+			<div class="header">
+					<div class="legalesSuperior">{{ params.web.webspot.legals.web_top_legal.val }}</div>
+					<!-- <div class="exclusivo">{{ params.web.webspot.legals.webTop.val }}</div> -->
+			</div>
+			<img class="contador" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_11.gif') }}" />
+			<div class="principal">
+			<div class="chica">
+				<div class="sexy"></div>
+			</div>
+			<div class="right">
+				<div class="mujeres"></div>
+				{% if params.web.webspot.formfields.error.val == NULL %}
+				<div class="form">
+					<form name="webFormSend" id="msisdnForm" action="{{ path('web_pin', {site: params.config.site.name, cat: params.config.portal.name}) }}" method="POST">
+					    <table cellpadding="5" class="tableForm">
+							<tr>
+								<td align="center">
+									<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_04.png') }}"/>
+									</td>
+							</tr>
+							<tr>
+								<td align="center">
+								{% for var in params.web.webspot.formfields %}
+									{% if var.wppage == 1 %}
+										<input type='{{ var.type }}' id='{{ var.key }}' name='{{ var.key }}' value='{{ var.val }}' />
+									{% endif %}
+								{% endfor %}
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									{% if params.web.webspot.formfields.opName.val == 2 %}
+									<div id="operadores" class="operadores">
+										<select id='operador' name="operador">
+										{% for op in params.web.webspot.formfields.opName.op %}
+											<option id="{{ op.shortname }}" name="{{ op.shortname }}" value="{{ op.shortname }}">{{ op.name }}</option>
+										{% endfor %}
+										</select>
+									</div>
+									{% endif %}
+									{% if params.web.webspot.formfields.opName.val == 1 %}
+										<input type="hidden" id="operador" name="operador" value="{{ params.web.webspot.formfields.opName.op }}" />
+									{% endif %}
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<a href="#" onclick="sendMsisdn('msisdnForm');" ><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_btn_enviar01.gif') }}" alt="Submit button" style="" /></a>
+									{% if params.web.webspot.formfields.checkbox.val == 1 %}
+										<p class="termAndCond">
+										<input type="checkbox" name="terms_ok" id="terms_ok"/>
+											<a href="#" class="tooltip">
+												{{ params.web.webspot.legals.web_terms_and_conditions_checkbox.val }}
+												<span style="display:none">{{ params.web.webspot.legals.web_terms_and_conditions.val }}</span>
+											</a>
+										</p>
+										{% endif %}
+									{% if params.web.webspot.formfields.checkbox.val == 0 %}
+										<p class="termAndCond">
+											{{ params.web.webspot.legals.web_terms_and_conditions_checkbox.val }}
+										</p>
+									{% endif %}
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				{% else %}
+					{{ include('LandingPages' ~ params.config.portal.bundle ~ '' ~ params.config.site.bundle ~ 'Bundle::errors.html.twig') }}
+				{% endif %}
+				<div class="tablaChicas">
+					<table cellspacing="10">
+						<tr>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_09.png') }}"/></td>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_10.png') }}"/></td>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_08.png') }}"/></td>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_15.png') }}"/></td>
+						</tr>
+					</table>
+				</div>
+			</div>				
+		</div>
+		<div class="legales">{{ params.web.webspot.legals.web_lower_legal.val }}</div>
+		</div>				
+	</div>
+{% endblock %}

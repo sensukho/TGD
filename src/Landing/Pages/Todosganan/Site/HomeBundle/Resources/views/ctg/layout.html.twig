@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo CTG 3</title>
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('bundles/todosganan/site/css/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/todosganan/site/js/jquery.js') }}"></script>
+	<script src="{{ asset('bundles/todosganan/site/js/jquery.mousewheel.js') }}"></script>
+	<script>
+        $(function(){
+            $("#page-wrap").wrapInner("<table cellspacing='30'><tr>");
+            $(".post").wrap("<td></td>");
+            $("html, body").mousewheel(function(event, delta) {
+                this.scrollLeft -= (delta * 40);
+                event.preventDefault();
+            });  
+        });
+    </script>	
+{% endblock %}
+
+</head>
+
+<body>
+{% block body %} {% endblock %}
+
+	<script src="{{ asset('bundles/todosganan/site/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('bundles/todosganan/site/js/jquery.backstretch.js') }}"></script>
+	<script>
+	    $.backstretch("{{ asset('bundles/todosganan/site/img/bg_2.jpg') }}");
+	</script>
+
+</body>
+</html>

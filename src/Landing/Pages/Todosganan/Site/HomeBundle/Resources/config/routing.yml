@@ -1,0 +1,6 @@
+##### TODOSGANAN :: HOME #####
+
+web_ctg:
+    pattern:  / #Sitio CTG
+    #defaults: { _controller: LandingPagesTodosgananSiteHomeBundle:Ctg:inicio }
+    defaults: { _controller: LandingPagesTodosgananSiteHomeBundle:Ctg:inicio }

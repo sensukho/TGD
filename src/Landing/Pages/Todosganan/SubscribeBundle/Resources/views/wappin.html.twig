@@ -1,0 +1,69 @@
+{% extends 'LandingPagesCoreBundle::' ~ portal ~ 'layout.html.twig' %}
+{% block content %}
+  	<div class="mainWrapper">
+		<center>
+			<div class="legalesSuperior">{{ params.web.webspot.legals.web_top_legal.val }}</div>
+			<form method="post" action="{{ path('wap_reg', {site: params.config.site.name, cat: params.config.portal.name}) }}">
+				<div class="section1">
+					<input title="boton" alt="boton" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/mx/wap_00.png') }}" type="image" />
+				</div> 					
+				<div class="littlepixel"></div>
+				<div id="head">
+					<input title="boton" alt="boton" style="margin-bottom:-4px;"  src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/mx/wap_01.jpg') }}" type="image" />  		  		
+				</div>
+				<div class="forma">
+					<table  cellpadding="4" cellspacing="0">  		  			
+  		  				<tr>
+  		  					<td align="center" class="pregunta">
+  		  						<input title="boton" alt="boton" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/wap_10.png') }}" type="image" />
+							</td>
+  		  				</tr>  		  												
+							<input class="telefono gralInput" type="hidden" name="msisdn" value="{{ params.web.webspot.formfields.msisdn.val }}" />	
+  		  				<tr>
+  		  					<td align="center">
+  		  						<input src='{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/wap_btn_enviar04.gif') }}' type="image"  />	
+  		  					</td>
+  		  				</tr>
+  		  				<tr>
+  		  					<td align="center">
+  		  					</td>
+  		  				</tr>			  		  				  			  		  				
+  		  			</table>
+  		  			</div>
+					<div style="padding-bottom: 10px; padding-top:5px;" id="head">
+						<table cellspacing="0" cellpadding="0">
+							<tr>
+								<td align="center">
+									<input title="boton" alt="boton" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/wap_04.jpg') }}" type="image" />
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<input title="boton" alt="boton" style="margin-top:-4px" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/mx/wap_05.jpg') }}" type="image" />								
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<input title="boton" alt="boton" style="margin-top:-4px" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/mx/wap_06.jpg') }}" type="image" />									
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<input title="boton" alt="boton" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/wap/mx/wap.png') }}" type="image" />									
+								</td>
+							</tr>
+						</table> 									
+					</div>	
+  		  		</form>
+  		  		</div>
+				<div class="legales"></div>
+  		  </center>  
+  		  <div id="atencion">
+  				<center>
+  				<a class="links" href="#"></a>
+  				&nbsp;<font style="font-size:30px; color: #fff; font-weight: bold;">/</font>&nbsp;
+  				<a class="links" href="#"></a>
+  				</center>
+  			</div>
+  	</div> 
+{% endblock %}

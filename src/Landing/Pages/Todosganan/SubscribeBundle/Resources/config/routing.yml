@@ -1,0 +1,3 @@
+landing_pages_todosganan_subscribe_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: LandingPagesTodosgananSubscribeBundle:Default:index }

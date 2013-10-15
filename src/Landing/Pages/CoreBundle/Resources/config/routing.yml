@@ -1,0 +1,52 @@
+##### ADMINISTRATOR #####
+admin:
+    pattern:  /admin #Admin
+    defaults: { _controller: LandingPagesCoreBundle:Default:admin }
+
+admin_login:
+    pattern:  /login #Admin
+    defaults: { _controller: LandingPagesCoreBundle:Default:login }
+
+admin_home:
+    pattern:  /home/{session} #Admin
+    defaults: { _controller: LandingPagesCoreBundle:Default:home }
+##### HOME #####
+index:
+    pattern:  /{cat}/{site}/ #INICIO
+    defaults: { _controller: LandingPagesCoreBundle:Default:index }
+##### WEB SECTION #####
+web:
+    pattern:  /{cat}/{site}/web #PC/SmartPhones/Tablets
+    defaults: { _controller: LandingPagesCoreBundle:Default:web }
+
+web_pin:
+    pattern:  /{cat}/{site}/web/pin
+    defaults: { _controller: LandingPagesCoreBundle:Default:webpin }
+
+web_reg:
+    pattern:  /{cat}/{site}/web/reg
+    defaults: { _controller: LandingPagesCoreBundle:Default:webreg }
+
+##### WAP SECTION #####
+wap:
+    pattern:  /{cat}/{site}/wap #Mobiles XHTM/IMAGENES
+    defaults: { _controller: LandingPagesCoreBundle:Default:wap }
+
+wap_pin:
+    pattern:  /{cat}/{site}/wap/pin
+    defaults: { _controller: LandingPagesCoreBundle:Default:wapreg }
+
+wap_reg:
+    pattern:  /{cat}/{site}/wap/reg
+    defaults: { _controller: LandingPagesCoreBundle:Default:wapreg }
+
+##### GENERIC #####
+web_ajax_chechbox:
+    pattern:  /web/ajax/checkbox/ #Muestra el checkbox de TERMINOS
+    defaults: { _controller: LandingPagesCoreBundle:Ctg:checkbox }
+
+##### TODOSGANAN #####
+
+web_ctg_pages:
+    pattern:  /{page}.html
+    defaults: { _controller: LandingPagesCoreBundle:Ctg:pages }

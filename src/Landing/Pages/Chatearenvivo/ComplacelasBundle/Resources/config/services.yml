@@ -1,0 +1,7 @@
+parameters:
+#    landing_pages_chatearenvivo_complacelas.example.class: Landing\Pages\Chatearenvivo\ComplacelasBundle\Example
+
+services:
+#    landing_pages_chatearenvivo_complacelas.example:
+#        class: %landing_pages_chatearenvivo_complacelas.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

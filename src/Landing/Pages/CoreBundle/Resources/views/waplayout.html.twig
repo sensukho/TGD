@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link REL="SHORTCUT ICON" HREF="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/favicon.ico') }}" />
+
+{% block stylesheets %}
+		<link href="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/css/web/estilo_general.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/css/wap/' ~ params.web.webspot.formfields.countryCode.val ~ '/estilo_wap.css') }}" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/css/jquery.ui/themes/custom-theme/jquery.ui.tooltip.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script language="JavaScript" src ="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/js/web/ajaxOperadores.js') }}"></script>
+		<script language="JavaScript" src ="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/js/functions.js') }}"> </script>
+{% endblock %}
+
+	</head>
+	<body>
+        {% block body %}
+
+    		<div class="block" style="width:550px; height:600px; margin:auto;">
+        		{% block content %}{% endblock %}
+    		</div>
+
+		{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,87 @@
+{% extends 'LandingPagesTodosgananSiteHomeBundle:ctg:layout.html.twig' %}
+{% block body %}
+<!-- START SECTION HEADER -->
+<div id="header">
+	<div class="twitter" onclick="window.open('https://twitter.com/clubtodosganan','_blank')">twit</div>
+	<div class="facebook" onclick="window.open('https://www.facebook.com/clubtodosganan','_blank')">feiz</div>
+	<div id="menu">
+		<ul>
+			<li><a href="#inicio">Inicio</a></li>
+			<li><a href="#premios">Premios</a></li>
+			<li><a href="#ganadores">Ganadores</a></li>
+			<li><a href="#comoganar">¿Cómo ganar?</a></li>
+			<li><a href="basesctg.pdf" target="_blank">Bases</a></li>
+		</ul>
+	</div>
+</div>
+<div id="logo">
+	<a href="#inicio" target="_self">
+		<img src="{{ asset('bundles/todosganan/site/img/logo.png') }}">
+	</a>
+</div>
+<div id="elclub">
+	<img src="{{ asset('bundles/todosganan/site/img/elclub.png') }}">
+</div>
+<!-- END SECTION HEADER -->
+<!-- START SECTION BODY -->
+<div id="video">
+	<iframe width="330" height="210" src="http://www.youtube.com/embed/hLaAoj6cVX0" frameborder="0"></iframe>
+</div>
+<div id="video2">
+	<iframe width="340" height="220" src="http://www.youtube.com/embed/ZSQM4vhkXZ4" frameborder="0"></iframe>
+</div>
+<div id="page-wrap">
+	<div id="Stage1"></div>   
+	<div id="inicio" class="post">
+		<div id="videoinicio"><img src="{{ asset('bundles/todosganan/site/img/bg4.png') }}"></div>
+		<div id="muchospremios"><img src="{{ asset('bundles/todosganan/site/img/premioshome3.png') }}"></div>
+		<div id="caja"><img src="{{ asset('bundles/todosganan/site/img/cuadro.png') }}"></div>
+	</div>
+	<div id="premios" class="post">
+		<div id="premiomensual">
+			<a href="#premios" target="_self">	
+				<img src="{{ asset('bundles/todosganan/site/img/premio_mensual2.png') }}">
+			</a>
+		</div>
+		<div id="premiosemanal">
+			<a href="#premios" target="_self">	
+				<img src="{{ asset('bundles/todosganan/site/img/premios_semanales2.png') }}">
+			</a>
+		</div>
+		<div id="premiodiario">
+			<a href="#premios" target="_self">	
+				<img src="{{ asset('bundles/todosganan/site/img/premios_diarios2.png') }}">
+			</a>
+		</div>
+		<div id="recompensas">
+			<img src="{{ asset('bundles/todosganan/site/img/recomp_premios.png') }}">
+		</div>
+	</div>
+	<div id="ganadores" class="post">
+		<div id="ganadorestop"><a href="#ganadores" target="_self"><img src="{{ asset('bundles/todosganan/site/img/ganadorestop.png') }}"></a></div>
+		<div id="ganadormensual" class="ganadoreslinea"><img src="{{ asset('bundles/todosganan/site/img/ganador_mensual2.png') }}"></div>
+		<div id="ganadorsemanal" class="ganadoreslinea"><a href="#ganadores" target="_self"><img src="{{ asset('bundles/todosganan/site/img/ganador_semanal2.png') }}"></a></div>
+		<div id="ganadordiario" class="ganadoreslinea"><a href="#ganadores" target="_self"><img src="{{ asset('bundles/todosganan/site/img/ganador_diario2.png') }}"></a></div>
+	</div>
+	<div id="comoganar" class="post">
+		<div id="txtocomoganar">
+			<img src="{{ asset('bundles/todosganan/site/img/comoganar2.png') }}">
+		</div>
+		<div id="video3">
+			<iframe width="420" height="236" src="http://www.youtube.com/embed/rZKtG0LWPFg" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+<!-- END SECTION BODY -->
+<!-- START SECTION SUBSCRIBE -->
+<div id="footer">
+	<div id="logoTelcel"><img src="{{ asset('bundles/todosganan/site/img/telcel2.png') }}"></div>
+	<div id="left"><p>Promoción válida para usuarios Telcel a nivel nacional del 01 al 30 de septiembre de 2013. El usuario participa en la promoción suscribiéndose al servicio Club Todos Ganan y dándose de alta en la promoción enviando la palabra GANA a la marcación 2524. Al suscribirse, se entenderá que el usuario ha leído, comprendido y aceptado los Términos y Condiciones previstos en las Bases de la promoción. Limitado a un (1) premio mensual consistente en Un viaje de lujo a la Riviera Maya para 2 personas (detallado en las Bases). Habrá cuatro (4) premios semanales y veinticinco (25) premios diarios (detallados en las Bases). Los ganadores serán los usuarios que hayan acumulado la mayor cantidad de puntos al final de cada fecha señalada en el calendario previsto en las bases y durante la vigencia de la promoción. El Costo por Mensaje de Texto SMS a la marcación 2526 es de $3.50 pesos. El Costo del servicio Club Todos Ganan es de $15 pesos y se cobrará semana a semana, aun habiendo terminado la promoción, hasta que el usuario solicite la baja del servicio. Para cancelar el servicio Club Todos Ganan y dejar de participar en la promoción envía BAJA a la marcación 2524. Para mayor información consulta las Bases o comunícate sin costo desde un teléfono fijo o con costo de llamada local desde tu Telcel al 018008002300 de L a V de 9:00 a 18:00 horas. Todos los costos incluyen IVA del 16%, en ciudades en zona fronteriza, el IVA que se aplicará será de 11%.</p></div>
+	<div id="right">
+		<div id="zell"><img src="{{ asset('bundles/todosganan/site/img/imgzell.png') }}"></div>
+		<div id="txtcta"><h3>Ingresa tu celular para canjear:</h3><br><form><input type="text"></form><br><p><input type="checkbox" />Acepto términos y condiciones.</p></div>
+		<div id="btn"><img src="{{ asset('bundles/todosganan/site/img/btn.png') }}"></div>
+	</div>
+</div>
+<!-- END SECTION SUBSCRIBE -->
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'LandingPagesCoreBundle::' ~ portal ~ 'layout.html.twig' %}
+
+{% block content %}
+	<div class="background">
+		<div class="container">
+			<div class="header">					
+					<div class="legalesSuperior">{{ params.web.webspot.legals.web_top_legal.val }}</div>
+					<!-- <div class="exclusivo">{{ params.web.webspot.legals.webTop.val }}</div> -->
+			</div>
+			<img class="contador" src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_11.gif') }}" />
+			<div class="principal">
+			<div class="chica">
+				<div class="sexy"></div>
+			</div>
+			<div class="right">					
+				<div class="mujeres"></div>
+				<div class="form">
+				{% if params.web.webspot.formfields.error.val == NULL %}
+					<form name="pinFormSend" id="pinForm" action="{{ path('web_reg', {site: params.config.site.name, cat: params.config.portal.name}) }}" method="POST">
+					    <table cellpadding="5" class="tableForm">
+							<tr>
+								<td align="center">
+									<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_05.png') }}"/>
+									</td>
+							</tr>
+							<tr>										
+								<td align="center">
+								{% for var in params.web.webspot.formfields %}
+									{% if var.wppage == 2 %}
+										<input maxlength="4" type='{{ var.type }}' id='{{ var.key }}' name='{{ var.key }}' value='{{ params.web.webspot.formfields.pin.val }}' />
+									{% endif %}
+								{% endfor %}
+								</td>
+							</tr>
+							<tr>
+								<td align="center"></td>
+							</tr>
+							<tr>
+								<td align="center">
+									<a href="#" onclick="sendPin('pinForm');" ><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_btn_enviar02.gif') }}" alt="Submit button" style="" /></a>
+								</td>
+							</tr>
+						</table>
+					</form>
+				{% else %}
+					{{ include('LandingPages' ~ params.config.portal.bundle ~ '' ~ params.config.site.bundle ~ 'Bundle::errors.html.twig') }}
+				{% endif %}
+				</div>
+				<div class="tablaChicas">
+					<table cellspacing="10">
+						<tr>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_09.png') }}"/></td>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_10.png') }}"/></td>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_08.png') }}"/></td>
+							<td align="center"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/mx/web_15.png') }}"/></td>
+						</tr>
+					</table>
+				</div>
+			</div>				
+		</div>
+		<div class="legales">{{ params.web.webspot.legals.web_lower_legal.val }}</div>
+		</div>				
+	</div>
+
+	<!-- '../../../configGeneral/generalCodeFooter.php' -->
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'LandingPagesCoreBundle::' ~ portal ~ 'layout.html.twig' %}
+{% block title %} Gana un Iphone al instante! .:. I <3 Gadgets {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    		<link href="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/css/web/base.css') }}" rel="stylesheet" type="text/css" />
+    		<link href="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/css/web/amazium.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="grid_12">
+    	<div class="legalesSuperior">
+    		<p>{{ params.web.webspot.legals.web_top_legal.val }}</p>
+        	<div id="logotexto"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_01.png') }}" class="max-img"></div>
+        </div>
+	</div>
+</div>
+<div id="cont">
+	<div class="row">
+		<div id="imgcont">
+			<div class="grid_4">
+				<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_04.png') }}" class="max-img"><input type="checkbox" name="premio"><br>
+				<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_05.png') }}" class="max-img"><input type="checkbox" name="premio"></div>
+			<div class="grid_4">
+				<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_06.png') }}" class="max-img"><input type="checkbox" name="premio"><br>
+				<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_07.png') }}" class="max-img"><input type="checkbox" name="premio"></div>
+		</div>
+		<div class="grid_4">
+			<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_02.png') }}" class="max-img"><br><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_03.png') }}" class="max-img"><br>
+			<div id="cta" class="shadow">
+			{% if params.web.webspot.formfields.error.val == NULL %}
+				<div id="ctatxt">
+					<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_09.png') }}" class="max-img"><br>
+					<form method="post" action='pin.php' id="msisdnForm" name="msisdnForm" >
+		                <table cellspacing="2" class="tableForm">		               
+		                	<tr>		                		
+		                		<td align="center">
+		                			{% for var in params.web.webspot.formfields %}
+										{% if var.wppage == 1 %}
+											<input type='{{ var.type }}' id='{{ var.key }}' name='{{ var.key }}' value='{{ var.val }}' />
+										{% endif %}
+									{% endfor %}
+		                			
+		                			{% if params.web.webspot.formfields.opName.val == 2 %}
+										<div id="operadores" class="operadores">
+											<select id='operador' name="operador">
+											{% for op in params.web.webspot.formfields.opName.op %}
+												<option id="{{ op.shortname }}" name="{{ op.shortname }}" value="{{ op.shortname }}">{{ op.name }}</option>
+											{% endfor %}
+											</select>
+										</div>
+									{% endif %}
+									{% if params.web.webspot.formfields.opName.val == 1 %}
+										<input type="hidden" id="operador" name="operador" value="{{ params.web.webspot.formfields.opName.op }}" />
+									{% endif %}
+
+		                			<div class="acepto_terminoscondiciones">
+		                				{% if params.web.webspot.formfields.checkbox.val == 1 %}
+											<p class="termAndCond">
+											<input type="checkbox" name="terms_ok" id="terms_ok"/>
+												<a href="#" class="tooltip">
+													{{ params.web.webspot.legals.web_terms_and_conditions_checkbox.val }}
+													<span style="display:none">{{ params.web.webspot.legals.web_terms_and_conditions.val }}</span>
+												</a>
+											</p>
+											{% endif %}
+										{% if params.web.webspot.formfields.checkbox.val == 0 %}
+											<p class="termAndCond">
+												{{ params.web.webspot.legals.web_terms_and_conditions_checkbox.val }}
+											</p>
+										{% endif %}
+		                			</div>
+		                		</td>
+		                	</tr>
+		                </table>
+					</form>
+				</div>
+				<div id="ctabtn"><a href="#" onclick="sendPin('pinForm');"><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_btn_enviar_01.gif') }}" class="max-img"></a><br/>&nbsp;</div>
+			{% else %}
+				{{ include('LandingPages' ~ params.config.portal.bundle ~ '' ~ params.config.site.bundle ~ 'Bundle::errors.html.twig') }}
+			{% endif %}
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="grid_12">
+			<div id="legalinferior" classs="legales">
+				<p>{{ params.web.webspot.legals.web_lower_legal.val }}</p>
+	        </div>
+		</div>
+	</div>
+{% endblock %}

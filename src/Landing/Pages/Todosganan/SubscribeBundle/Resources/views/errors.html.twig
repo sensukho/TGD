@@ -1,0 +1,36 @@
+{% block error %}
+<div class="form2">
+{% if params.web.webspot.formfields.error.val == 'LTE=' or params.web.webspot.formfields.error.val == 'LTI=' or params.web.webspot.formfields.error.val == 'LTM=' or params.web.webspot.formfields.error.val == 'LTQ=' %}
+	<form name="pinFormSend" id="pinForm" action="{{ path('web_reg', {site: params.config.site.name, cat: params.config.portal.name}) }}.html" method="POST">
+{% endif %}
+{% if params.web.webspot.formfields.error.val == 'MQ==' or params.web.webspot.formfields.error.val == 'Mg==' or params.web.webspot.formfields.error.val == 'Mw==' or params.web.webspot.formfields.error.val == 'NA==' %}
+	<form name="pinFormSend" id="pinForm" action="{{ path('web_reg', {site: params.config.site.name, cat: params.config.portal.name}) }}.html" method="POST">
+{% endif %}
+	    <table cellpadding="3" class="tableForm">
+			<tr>
+				<td align="center">
+					<img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/' ~ params.web.webspot.formfields.error.val~ '.png') }}"/>
+					</td>
+			</tr>
+			<tr>
+				<td align="center">
+				{% for var in params.web.webspot.formfields %}
+					{% if var.wppage == 1 %}
+						<input type='{{ var.type }}' id='{{ var.key }}' name='{{ var.key }}' value='{{ var.val }}' />
+					{% endif %}
+				{% endfor %}
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+				{% if params.web.webspot.formfields.error.val == 'Mg==' or params.web.webspot.formfields.error.val == 'Mw==' %}
+					<a href="#" onclick="sendPin('pinForm');" ><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_btn_enviar02.gif') }}" alt="Submit button" style="" /></a>
+				{% else %}
+					<a href="#" onclick="sendMsisdn('msisdnForm');" ><img src="{{ asset('bundles/landingpages' ~ params.config.site.name ~ '/img/web/web_btn_enviar01.gif') }}" alt="Submit button" style="" /></a>
+				{% endif %}
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+{% endblock %}

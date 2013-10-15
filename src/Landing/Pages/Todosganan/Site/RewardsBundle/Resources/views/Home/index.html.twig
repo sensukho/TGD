@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Recompensasasxasxsdsd</title>
+<link rel="stylesheet" href="{{ asset('bundles/todosganan/rewards/css/style.css') }}">
+<script src="{{ asset('bundles/todosganan/rewards/js/jquery-latest.js') }}"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="capa1"> <img class="panel_index" src="{{ asset('bundles/todosganan/rewards/img/rew/panel.png') }}" /> </div>
+		<div id="capa2">
+			<div id="arrows">
+				<div class="arrow_left"><button class="right"><img src="{{ asset('bundles/todosganan/rewards/img/rew/next_btn.png') }}"></button></div>
+				<div class="arrow_left"><button class="left"><img src="{{ asset('bundles/todosganan/rewards/img/rew/prev_btn.png') }}"></button></div>
+			</div>
+		</div>
+		<div id="capa3"></div>
+		<div id="capa4">
+			<img id="loading-image" src="/bundles/todosganan/rewards/img/rew/loading.gif" alt="Loading..." />
+		</div>
+		<div id="capa5">
+			<img id="loading-image" src="/bundles/todosganan/rewards/img/rew/loading.gif" alt="Loading..." />
+		</div>
+
+		<div class='form_container '>
+			<div class="slideContainer">
+				
+				{% for page in pages %}
+				<div class="slide" data-background="{{ asset('bundles/todosganan/rewards/img/rew/bg.jpg') }}">
+					{% for p in page%}
+						{{ p.description|raw }}
+					{% endfor %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+	<script src="{{ asset('bundles/todosganan/rewards/js/app.js') }}"></script>
+	<script src="{{ asset('bundles/todosganan/rewards/js/ok.js') }}"></script>
+</body>
+</html>

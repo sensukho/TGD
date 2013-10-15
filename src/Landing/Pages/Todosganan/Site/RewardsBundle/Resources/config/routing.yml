@@ -1,0 +1,13 @@
+##### TODOSGANAN :: REWARDS #####
+
+rewards:
+    pattern:  /rewards/ #Admin
+    defaults: { _controller: LandingPagesTodosgananSiteRewardsBundle:Home:index }
+
+rewards_view:
+    pattern:  /rewards_view/ #Admin
+    defaults: { _controller: LandingPagesTodosgananSiteRewardsBundle:Home:viewreward }
+
+rewards_ok:
+    pattern:  /rewards_ok/ #Admin
+    defaults: { _controller: LandingPagesTodosgananSiteRewardsBundle:Home:okreward }
